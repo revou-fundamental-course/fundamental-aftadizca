@@ -1,18 +1,17 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-family: "Sriracha", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
 body {
-    background-color: #f6e8ea;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+
     color: #fff;
     margin: 0px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+    background-image: url("../img/bg-repeat-reduce.webp");
+    background-repeat: repeat;
+    background-blend-mode: lighten;
 }
 
 hr {
@@ -37,10 +36,78 @@ hr:after {
     content: ". . . . . . .";
 }
 
+.icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.secondary {
+    color: #22181c;
+}
+
+.left {
+    text-align: left;
+}
+
+
+/* Heading
+   ----------------------------- */
+h1 {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: wheat;
+    letter-spacing: 1px;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 span {
+    margin-top: 5px;
+    font-size: 15px;
+    color: white;
+    word-spacing: 1px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+h1 span:after,
+h1 span:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 8px;
+    background-color: #0000;
+}
+
+h4 {
+    margin-top: 5px;
+    font-size: 15px;
+    color: white;
+    word-spacing: 1px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+    font-weight: 600;
+}
+
 
 /* HEADER */
 
 #header {
+    width: 100%;
     display: flex;
     position: fixed;
     top: 0;
@@ -55,6 +122,7 @@ hr:after {
 
 #header img {
     width: 4rem;
+    margin-left: 2rem;
 }
 
 .btn-nav {
@@ -62,25 +130,21 @@ hr:after {
 }
 
 nav {
+    margin-right: 2rem;
     display: flex;
     border: 1px solid black;
     border-radius: 5px;
     justify-content: space-around;
+    background-color: #22181c;
 }
 
 nav>a {
 
     display: flex;
     align-items: center;
-    font-size: 0.8vw;
-    padding: 0.5vw 1vw;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
     text-align: center;
-    width: 5vw;
-    border-left: 1px solid black;
-}
-
-nav>a:first-child {
-    border-left: 0px solid black;
 }
 
 /* HOME */
@@ -104,23 +168,88 @@ nav>a:first-child {
 
 /* PROFILE */
 #profile {
+
     display: flex;
+    justify-content: center;
     align-items: center;
+    color: #22181c;
 }
 
 .profile-img {
     background-image: url(../img/me.png);
-    background-size: 30vw;
+    background-size: 15vw;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 40vw;
-    width: 40vw;
-    height: 40vw;
+    border-radius: 20vw;
+    width: 20vw;
+    height: 20vw;
 
 }
 
+.profile-desc {
+    width: 30vw;
+}
+
+
+/* Porto */
+#porto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.porto-title {
+    width: 50%;
+}
+
+.porto-tiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rem;
+
+}
+
+.porto-tile {
+    overflow: hidden;
+    margin: 2rem;
+    width: 15rem;
+    height: 20em;
+    border-radius: 1rem;
+    background-image: linear-gradient(to right bottom, rgba(118, 100, 107, 0.5), rgba(96, 80, 86, 0.5), rgba(74, 60, 65, 0.5), rgba(53, 41, 46, 0.6), rgba(34, 24, 28, 0.8));
+    /* border: 2px solid rgba(34, 24, 28, 0.6); */
+    -webkit-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
+    -moz-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
+    box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
+    /* backdrop-filter: blur(2px); */
+}
+
+.porto-tile h1 {
+    margin-top: -1rem;
+    padding: 2rem;
+    padding-top: 3rem;
+    height: 4rem;
+    background-color: #22181c;
+    font-size: 2rem;
+}
+
+.porto-tile h4 {
+    margin: 2rem;
+    font-size: 1rem;
+    text-wrap: wrap;
+    text-align: center;
+}
+
+
 /* Header Responsive */
 @media only screen and (max-width: 1024px) {
+    .left {
+        text-align: center;
+    }
+
     .btn-nav {
         display: block;
     }
@@ -137,12 +266,18 @@ nav>a:first-child {
     }
 
     .profile-img {
-        background-size: 70vw;
+        background-size: 60vw;
         background-position: center;
-        border-radius: 80vw;
-        width: 80vw !important;
-        height: 80vw;
+        border-radius: 70vw;
+        width: 70vw !important;
+        height: 70vw;
 
+    }
+
+    .profile-desc {
+        display: block;
+        width: 70%;
+        text-align: center;
     }
 
     /* .col-1,
@@ -163,7 +298,7 @@ nav>a:first-child {
 }
 
 
-.col-1 {
+/* .col-1 {
     width: 8.33%;
 }
 
@@ -209,7 +344,7 @@ nav>a:first-child {
 
 .col-12 {
     width: 100%;
-}
+} */
 
 .wrapper {
     position: relative;
