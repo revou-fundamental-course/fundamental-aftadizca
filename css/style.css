@@ -1,0 +1,218 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Sriracha", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #f6e8ea;
+    color: #fff;
+    margin: 0px;
+}
+
+hr {
+    position: relative;
+    background-color: none;
+    border: none;
+    height: 4rem;
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+hr:after {
+    position: relative;
+    top: -2.5rem;
+    font-size: 5rem;
+    background: none;
+    display: inline-block;
+    color: #22181c;
+    font-family: "Londrina Shadow";
+    line-height: 1;
+    content: ". . . . . . .";
+}
+
+
+/* HEADER */
+
+#header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0rem;
+    background-color: rgba(34, 24, 28, 0.4);
+    backdrop-filter: blur(30px);
+    border-bottom: 2px solid rgba(34, 24, 28, 1);
+}
+
+#header img {
+    width: 4rem;
+}
+
+.btn-nav {
+    display: none;
+}
+
+nav {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+    justify-content: space-around;
+}
+
+nav>a {
+
+    display: flex;
+    align-items: center;
+    font-size: 0.8vw;
+    padding: 0.5vw 1vw;
+    text-align: center;
+    width: 5vw;
+    border-left: 1px solid black;
+}
+
+nav>a:first-child {
+    border-left: 0px solid black;
+}
+
+/* HOME */
+
+
+.home-bg {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: top right;
+    /* filter: blur(2px); */
+    height: 578px;
+}
+
+.home-desc {
+    font-size: large;
+    position: absolute;
+    top: 10rem;
+    left: 5rem;
+}
+
+
+/* PROFILE */
+#profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    background-image: url(../img/me.png);
+    background-size: 30vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 40vw;
+    width: 40vw;
+    height: 40vw;
+
+}
+
+/* Header Responsive */
+@media only screen and (max-width: 1024px) {
+    .btn-nav {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .profile-img {
+        background-size: 70vw;
+        background-position: center;
+        border-radius: 80vw;
+        width: 80vw !important;
+        height: 80vw;
+
+    }
+
+    /* .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-10,
+    .col-11,
+    .col-12 {
+        width: 80vw !important;
+    } */
+
+}
+
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 578px;
+    width: 100%;
+}
