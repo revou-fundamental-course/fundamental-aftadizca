@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-weight: normal;
     letter-spacing: 2px;
@@ -116,7 +120,7 @@ h4 {
     align-items: center;
     padding: 0.5rem 0rem;
     background-color: rgba(34, 24, 28, 0.4);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(5px);
     border-bottom: 2px solid rgba(34, 24, 28, 1);
 }
 
@@ -135,7 +139,6 @@ nav {
     border: 1px solid black;
     border-radius: 5px;
     justify-content: space-around;
-    background-color: #22181c;
 }
 
 nav>a {
@@ -145,6 +148,15 @@ nav>a {
     font-size: 1rem;
     padding: 0.5rem 2rem;
     text-align: center;
+    background-color: #22181c;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav>a:hover {
+    background-color: rgba(34, 24, 28, 0.1);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
 }
 
 /* HOME */
@@ -209,7 +221,7 @@ nav>a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 5rem;
+    padding: 0rem 5rem;
 
 }
 
@@ -224,7 +236,7 @@ nav>a {
     -webkit-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
     -moz-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
     box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
-    /* backdrop-filter: blur(2px); */
+    backdrop-filter: blur(2px);
 }
 
 .porto-tile h1 {
@@ -243,6 +255,81 @@ nav>a {
     text-align: center;
 }
 
+/* MESSAGE */
+
+#message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message-title {
+    width: 50%;
+
+}
+
+.message-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0rem 5rem;
+    color: #22181c;
+
+}
+
+.form,
+.result {
+    padding: 0rem 2rem;
+    width: 40%;
+}
+
+input,
+textarea {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    height: 10rem;
+}
+
+input[type=submit],
+button {
+    width: 5rem;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #22181c;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 1px;
+}
+
+input[type=submit]:hover,
+button:hover {
+    background-color: rgba(34, 24, 28, 0.1);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
 
 /* Header Responsive */
 @media only screen and (max-width: 1024px) {
@@ -256,6 +343,17 @@ nav>a {
 
     nav {
         display: none;
+    }
+
+    .home-desc {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 1rem;
+        top: 1rem;
+        bottom: 0rem;
+        right: 0rem;
     }
 
     #profile {
@@ -278,6 +376,24 @@ nav>a {
         display: block;
         width: 70%;
         text-align: center;
+    }
+
+    .porto-tiles,
+    .message-form {
+        flex-direction: column;
+        padding: 0rem;
+    }
+
+    h1.responsive {
+        font-size: 8vw !important;
+    }
+
+    span.responsive {
+        font-size: 3vw !important;
+    }
+
+    h4.responsive {
+        font-size: 1vw;
     }
 
     /* .col-1,

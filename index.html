@@ -18,25 +18,26 @@
         <div><img src="img/logo.png" alt="logo"></div>
         <div>
             <nav>
-                <a>Home</a>
-                <a>Profile</a>
-                <a>Portofolio</a>
+                <a href="#home">Home</a>
+                <a href="#profile">Profile</a>
+                <a href="#porto">Portofolio</a>
                 <a>Message</a>
             </nav>
         </div>
-        <button class="btn-nav">MENU</button>
+        <!-- <button class="btn-nav">MENU</button> -->
     </div>
     <div id="home" class="wrapper col-12">
         <div class="home-bg"></div>
         <div class="home-desc">
-            <h1>Afta Dizca Wahana <span>Fullstack Web and Mobile Developer</span></h1>
+            <h1 class="responsive">Afta Dizca Wahana <span class="responsive">Fullstack Web and Mobile Developer</span>
+            </h1>
         </div>
     </div>
     <hr>
     <div id="profile" class="wrapper">
         <div class="profile-img"></div>
         <div class="profile-desc">
-            <h1 class="secondary left">About Me</h1>
+            <h1 class="secondary left responsive">About Me <span class="responsive">&nbsp;</span></h1>
             <h4 class="secondary">A passionate Full Stack Developer having an experience in building Web and Mobile
                 Application with
                 Javascript, ReactJS, SvelteJS, NodeJS and other cool frameworks.</h4>
@@ -61,7 +62,7 @@
 
     <div id="porto" class="wrapper">
         <div class="porto-title">
-            <h1 class="secondary">Portofolio <span class="secondary">Some of my works</span></h1>
+            <h1 class="secondary responsive">Portofolio <span class="secondary responsive">Some of my works</span></h1>
         </div>
         <div class="porto-tiles">
             <div class="porto-tile">
@@ -79,6 +80,44 @@
         </div>
 
     </div>
+
+    <hr>
+    <div id="message" class="wrapper">
+        <div class="message-title">
+            <h1 class="secondary responsive">Message Me<span class="secondary responsive">&#8203;</span></h1>
+        </div>
+        <div class="message-form">
+            <div class="form">
+                <form action="">
+                    <div class="row">
+                        <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+                    </div>
+                    <div class="row">
+                        <input type="text" id="ttl" name="ttl" placeholder="Birthday">
+                    </div>
+                    <div class="row">
+                        <label class="bold">Gender : </label>
+                        <input type="radio" id="Male" name="fav_language" value="HTML">
+                        <label>Male</label>
+                        <input type="radio" id="Female" name="fav_language" value="HTML">
+                        <label>Female</label>
+                    </div>
+                    <div class="row">
+                        <textarea type="text" id="msg" name="msg" placeholder="Message"></textarea>
+                    </div>
+                    <div class="row">
+                        <input type="submit" value="Send" />
+                    </div>
+                </form>
+            </div>
+            <div class="result">
+                <div class="row">Result</div>
+            </div>
+
+        </div>
+
+    </div>
+
 
 
 </body>
