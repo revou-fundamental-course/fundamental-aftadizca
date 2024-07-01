@@ -40,11 +40,13 @@ hr:after {
     content: ". . . . . . .";
 }
 
-.icon {
+.icon-medsos {
     width: 2rem;
     height: 2rem;
     margin-right: 1rem;
+    cursor: pointer;
 }
+
 
 .secondary {
     color: #22181c;
@@ -195,6 +197,7 @@ nav>a:hover {
     border-radius: 20vw;
     width: 20vw;
     height: 20vw;
+    background-blend-mode: color-burn;
 
 }
 
@@ -221,7 +224,6 @@ nav>a:hover {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0rem 5rem;
 
 }
 
@@ -269,20 +271,33 @@ nav>a:hover {
 
 }
 
-.message-form {
+.message-form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0rem 5rem;
     color: #22181c;
 
 }
 
 .form,
-.result {
+.result-wrapper {
     padding: 0rem 2rem;
-    width: 40%;
+    width: 30%;
+    min-height: 400px;
+}
+
+#msg-error {
+    display: none;
+    background-color: rgba(255, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(1px);
+
+}
+
+.active {
+    display: block !important;
 }
 
 input,
@@ -291,13 +306,22 @@ textarea {
     text-transform: uppercase;
     font-family: "Dosis", sans-serif;
     font-weight: bold;
+    border-radius: 1rem;
+    border: 2px solid black;
+
+}
+
+input.error,
+textarea.error {
+    border: 2px solid red;
 }
 
 .bold {
     font-weight: bold;
 }
 
-input[type=text] {
+input[type=text],
+input[type=date] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -321,6 +345,8 @@ button {
     text-decoration: none;
     color: #fff;
     border-radius: 1px;
+    border: 1px transparent solid;
+    border-radius: 1rem;
 }
 
 input[type=submit]:hover,
@@ -328,8 +354,31 @@ button:hover {
     background-color: rgba(34, 24, 28, 0.1);
     backdrop-filter: blur(5px);
     cursor: pointer;
+    border: 1px #22181c solid;
+    color: #22181c;
+
 }
 
+
+.result-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.result-wrapper>.row {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0rem;
+}
+
+.result-wrapper>.row>.label {
+    width: 30%;
+}
+
+.result-wrapper>.row>.result {
+    width: 70%;
+}
 
 /* Header Responsive */
 @media only screen and (max-width: 1024px) {
@@ -384,6 +433,8 @@ button:hover {
         padding: 0rem;
     }
 
+
+
     h1.responsive {
         font-size: 8vw !important;
     }
@@ -394,6 +445,18 @@ button:hover {
 
     h4.responsive {
         font-size: 1vw;
+    }
+
+    .lg:p-0 {
+        padding: 0rem !important
+    }
+
+    .lg-column {
+        flex-direction: column !important;
+    }
+
+    .lg-width {
+        width: 70% !important;
     }
 
     /* .col-1,
