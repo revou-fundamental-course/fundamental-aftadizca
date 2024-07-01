@@ -19,20 +19,19 @@ window.onload = function () {
     function dataValidtion(data) {
 
         let ok = true
-        data.entries().forEach(
-            v => {
-                if (v[0] !== "gender") {
-                    if (!v[1]) {
-                        document.getElementById(v[0]).classList.add("error")
-                        ok = false
-                    } else {
-                        document.getElementById(v[0]).classList.remove("error")
-                    }
+        for (const v of data.entries()) {
+            if (v[0] !== "gender") {
+                if (!v[1]) {
+                    document.getElementById(v[0]).classList.add("error")
+                    ok = false
+                } else {
+                    document.getElementById(v[0]).classList.remove("error")
                 }
-
             }
 
-        )
+        }
+
+
 
         if (!ok) {
             document.getElementById("msg-error").textContent = "Field can't be empty!"
@@ -52,12 +51,9 @@ window.onload = function () {
         const data = new FormData(event.target);
 
         if (dataValidtion(data)) {
-            data.entries().forEach(
-                v => {
-                    document.getElementById("msg-" + v[0]).textContent = v[1]
-                }
-            )
-
+            for (const v of data.entries()) {
+                document.getElementById("msg-" + v[0]).textContent = v[1]
+            }
             document.getElementById("result-wrapper").classList.add("flex")
 
         } else {
