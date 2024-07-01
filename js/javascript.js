@@ -76,14 +76,10 @@ window.onload = function () {
     function onClickMenu(event) {
         event.preventDefault()
         nav.classList.toggle("active")
-
-        console.log(nav.className)
         if (nav.className == "active") {
             btnMenu.textContent = "x"
-
         } else {
             btnMenu.textContent = "menu"
-
         }
     }
 
