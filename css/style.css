@@ -466,9 +466,20 @@ button:hover,
     }
 
     .porto-tiles,
-    .message-form {
-        flex-direction: column;
+    .message-form-wrapper {
+        flex-direction: column !important;
         padding: 0rem;
+    }
+
+    .message-form-wrapper {
+        flex-wrap: wrap;
+        align-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .form,
+    .result-wrapper {
+        justify-self: center;
     }
 
 
