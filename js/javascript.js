@@ -51,11 +51,44 @@ window.onload = function () {
         // Your form handling code here
         const data = new FormData(event.target);
 
-        console.log(dataValidtion(data))
+        if (dataValidtion(data)) {
+            data.entries().forEach(
+                v => {
+                    document.getElementById("msg-" + v[0]).textContent = v[1]
+                }
+            )
+
+            document.getElementById("result-wrapper").classList.add("flex")
+
+        } else {
+            document.getElementById("result-wrapper").classList.remove("flex")
+
+        }
 
 
     }
 
+    const btnMenu = document.getElementById("btn-nav")
+    const nav = document.getElementById("nav")
+
+    btnMenu.addEventListener("click", onClickMenu);
+
+    function onClickMenu(event) {
+        event.preventDefault()
+        nav.classList.toggle("active")
+
+        console.log(nav.className)
+        if (nav.className == "active") {
+            btnMenu.textContent = "x"
+
+        } else {
+            btnMenu.textContent = "menu"
+
+        }
+    }
+
+
 
 }
+
 

@@ -2,6 +2,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
 body {
     font-weight: normal;
     letter-spacing: 2px;
@@ -56,6 +58,13 @@ hr:after {
     text-align: left;
 }
 
+.dosis {
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+}
 
 /* Heading
    ----------------------------- */
@@ -131,10 +140,6 @@ h4 {
     margin-left: 2rem;
 }
 
-.btn-nav {
-    display: none;
-}
-
 nav {
     margin-right: 2rem;
     display: flex;
@@ -156,8 +161,8 @@ nav>a {
 }
 
 nav>a:hover {
-    background-color: rgba(34, 24, 28, 0.1);
-    backdrop-filter: blur(5px);
+    background-color: rgba(34, 24, 28, 0.5) !important;
+    backdrop-filter: blur(8px);
     cursor: pointer;
 }
 
@@ -274,9 +279,10 @@ nav>a:hover {
 .message-form-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     width: 100%;
     color: #22181c;
+    min-height: 500px;
 
 }
 
@@ -284,7 +290,32 @@ nav>a:hover {
 .result-wrapper {
     padding: 0rem 2rem;
     width: 30%;
-    min-height: 400px;
+    min-height: 300px;
+}
+
+.result-wrapper {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid #ccc;
+    border-radius: 2rem;
+    min-height: 300px;
+    margin-top: 0.5rem;
+}
+
+.result-wrapper>.row {
+    display: flex;
+    width: 100%;
+    padding: 1rem 0rem;
+}
+
+.result-wrapper>.row>.label {
+    width: 30%;
+}
+
+.result-wrapper>.row>.result {
+    width: 70%;
+    border-bottom: 1px solid #ccc;
 }
 
 #msg-error {
@@ -298,6 +329,13 @@ nav>a:hover {
 
 .active {
     display: block !important;
+}
+
+.flex {
+    display: flex !important;
+    animation-name: animate-message-result;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 input,
@@ -337,20 +375,23 @@ textarea {
 }
 
 input[type=submit],
-button {
+button,
+.btn-nav {
     width: 5rem;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #22181c;
+    background-color: #22181c !important;
     text-decoration: none;
-    color: #fff;
+    color: #fff !important;
     border-radius: 1px;
     border: 1px transparent solid;
     border-radius: 1rem;
+    text-align: center;
 }
 
 input[type=submit]:hover,
-button:hover {
+button:hover,
+.btn-nav:hover {
     background-color: rgba(34, 24, 28, 0.1);
     backdrop-filter: blur(5px);
     cursor: pointer;
@@ -359,25 +400,9 @@ button:hover {
 
 }
 
-
-.result-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.result-wrapper>.row {
-    display: flex;
-    width: 100%;
-    padding: 1rem 0rem;
-}
-
-.result-wrapper>.row>.label {
-    width: 30%;
-}
-
-.result-wrapper>.row>.result {
-    width: 70%;
+.btn-nav {
+    display: none;
+    margin-right: 2rem;
 }
 
 /* Header Responsive */
@@ -392,6 +417,19 @@ button:hover {
 
     nav {
         display: none;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        width: 50vw;
+        z-index: 1000;
+        margin: 0;
+        animation-name: animate-message-result;
+        animation-duration: 1000ms;
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    nav>a {
+        padding: 1rem 1rem;
     }
 
     .home-desc {
@@ -529,4 +567,16 @@ button:hover {
     position: relative;
     min-height: 578px;
     width: 100%;
+}
+
+
+
+@keyframes animate-message-result {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
