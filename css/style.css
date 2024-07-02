@@ -324,7 +324,7 @@ nav>a:hover {
 }
 
 .active {
-    display: block !important;
+    display: flex;
 }
 
 .flex {
@@ -413,6 +413,10 @@ button:hover,
 
     .left {
         text-align: center;
+    }
+
+    .active {
+        display: block;
     }
 
     .btn-nav {
