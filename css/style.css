@@ -1,15 +1,22 @@
+@font-face {
+    font-family: "Dosis";
+    src: url("../font/Dosis.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Lilita One";
+    src: url("../font/LilitaOne.ttf");
+}
+
 html {
     scroll-behavior: smooth;
 }
 
-
-
 body {
-    font-weight: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-family: "Dosis", sans-serif;
-    font-weight: 400;
+    font-family: "Dosis";
 
     color: #fff;
     margin: 0px;
@@ -63,7 +70,6 @@ hr:after {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-family: "Dosis", sans-serif;
-    font-weight: 400;
 }
 
 /* Heading
@@ -84,8 +90,7 @@ h1 span {
     font-size: 15px;
     color: white;
     word-spacing: 1px;
-    font-weight: normal;
-    letter-spacing: 2px;
+    font-weight: bold;
     text-transform: uppercase;
     font-family: "Dosis", sans-serif;
 
@@ -116,6 +121,27 @@ h4 {
     text-transform: uppercase;
     font-family: "Dosis", sans-serif;
     font-weight: 600;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 578px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    width: 30%;
 }
 
 
@@ -175,6 +201,7 @@ nav>a:hover {
     background-position: top right;
     /* filter: blur(2px); */
     height: 578px;
+    width: 100%;
 }
 
 .home-desc {
@@ -186,14 +213,6 @@ nav>a:hover {
 
 
 /* PROFILE */
-#profile {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #22181c;
-}
-
 .profile-img {
     background-image: url(../img/me.png);
     background-size: 15vw;
@@ -202,26 +221,25 @@ nav>a:hover {
     border-radius: 20vw;
     width: 20vw;
     height: 20vw;
-    background-blend-mode: color-burn;
 
 }
 
 .profile-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 30vw;
+    text-justify: newspaper;
 }
 
 
-/* Porto */
+/* PORTOFOLIO */
 #porto {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-}
-
-.porto-title {
-    width: 50%;
 }
 
 .porto-tiles {
@@ -264,32 +282,10 @@ nav>a:hover {
 
 /* MESSAGE */
 
-#message {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.message-title {
-    width: 50%;
-
-}
-
-.message-form-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
-    color: #22181c;
-    min-height: 500px;
-
-}
-
-.form,
+.form-wrapper,
 .result-wrapper {
     padding: 0rem 2rem;
-    width: 30%;
+    width: 30vw;
     min-height: 300px;
 }
 
@@ -297,10 +293,10 @@ nav>a:hover {
     display: none;
     flex-direction: column;
     justify-content: flex-start;
-    border: 2px solid #ccc;
+    align-self: flex-start;
+    border: 2px solid #22181c;
     border-radius: 2rem;
-    min-height: 300px;
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
 }
 
 .result-wrapper>.row {
@@ -407,6 +403,14 @@ button:hover,
 
 /* Header Responsive */
 @media only screen and (max-width: 1024px) {
+    .wrapper-responsive {
+        flex-direction: column;
+    }
+
+    .title {
+        width: 80vw;
+    }
+
     .left {
         text-align: center;
     }
@@ -471,116 +475,28 @@ button:hover,
         padding: 0rem;
     }
 
-    .message-form-wrapper {
-        flex-wrap: wrap;
-        align-content: center;
-        margin-bottom: 2rem;
+    .form-wrapper {
+        width: 70vw;
     }
 
-    .form,
     .result-wrapper {
-        justify-self: center;
+        margin-top: 3rem;
+        width: 60vw;
+        align-self: center;
     }
 
-
-
-    h1.responsive {
+    .lg-text-l {
         font-size: 8vw !important;
     }
 
-    span.responsive {
+    .lg-text-m {
         font-size: 3vw !important;
-    }
-
-    h4.responsive {
-        font-size: 1vw;
     }
 
     .lg:p-0 {
         padding: 0rem !important
     }
-
-    .lg-column {
-        flex-direction: column !important;
-    }
-
-    .lg-width {
-        width: 70% !important;
-    }
-
-    /* .col-1,
-    .col-2,
-    .col-3,
-    .col-4,
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12 {
-        width: 80vw !important;
-    } */
-
 }
-
-
-/* .col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-} */
-
-.wrapper {
-    position: relative;
-    min-height: 578px;
-    width: 100%;
-}
-
-
 
 @keyframes animate-message-result {
     0% {
