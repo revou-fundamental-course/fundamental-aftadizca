@@ -26,10 +26,9 @@ body {
     color: #fff;
     margin: 0px;
 
-    background-color: rgba(255, 255, 255, 0.9);
-    background-image: url("../img/bg-repeat-reduce.webp");
+    background-color: rgba(245, 222, 179, 0.37);
+    background-image: url("../img/shattered.png");
     background-repeat: repeat;
-    background-blend-mode: lighten;
 }
 
 hr {
@@ -48,7 +47,7 @@ hr:after {
     font-size: 5rem;
     background: none;
     display: inline-block;
-    color: #22181c;
+    color: rgb(34, 24, 28);
     font-family: "Londrina Shadow";
     line-height: 1;
     content: ". . . . . . .";
@@ -161,8 +160,8 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0rem;
-    background-color: rgba(34, 24, 28, 0.4);
-    backdrop-filter: blur(5px);
+    background-color: transparent;
+    backdrop-filter: blur(16px);
     border-bottom: 2px solid rgba(34, 24, 28, 1);
 }
 
@@ -174,9 +173,12 @@ h4 {
 nav {
     margin-right: 2rem;
     display: flex;
-    border: 1px solid black;
-    border-radius: 5px;
+    border: 1px solid #22181c;
+    background-color: rgba(245, 222, 179, 1) !important;
+    /* backdrop-filter: blur(16px); */
+    border-radius: 16px;
     justify-content: space-around;
+    overflow: hidden;
 }
 
 nav>a {
@@ -186,20 +188,28 @@ nav>a {
     font-size: 1rem;
     padding: 0.5rem 2rem;
     text-align: center;
-    background-color: #22181c;
     text-decoration: none;
-    color: #fff;
+    color: #22181c;
+    font-weight: 100;
+
+
+
 }
 
 nav>a:hover {
-    background-color: rgba(34, 24, 28, 0.5) !important;
-    backdrop-filter: blur(8px);
+    background-color: wheat !important;
     cursor: pointer;
+    overflow: hidden;
+    color: wheat;
+    font-weight: bold;
+
+    box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
+    animation: animate-button;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 /* HOME */
-
-
 .home-bg {
     background-image: url("../img/bg.jpg");
     background-size: cover;
@@ -328,8 +338,8 @@ nav>a:hover {
 
 }
 
-.active {
-    display: flex;
+#msg-error.active {
+    display: flex !important;
 }
 
 .flex {
@@ -346,7 +356,8 @@ textarea {
     font-family: "Dosis", sans-serif;
     font-weight: bold;
     border-radius: 1rem;
-    border: 2px solid black;
+    border: 1px solid #22181c;
+    background-color: wheat;
 
 }
 
@@ -381,24 +392,34 @@ button,
     width: 5rem;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #22181c !important;
+    background-color: wheat;
     text-decoration: none;
-    color: #fff !important;
+    color: #22181c;
+    font-weight: 100;
     border-radius: 1px;
-    border: 1px transparent solid;
-    border-radius: 1rem;
+    border: 1px #22181c solid;
+    border-radius: 8rem;
     text-align: center;
+    overflow: hidden;
+    min-width: 9rem;
 }
 
 input[type=submit]:hover,
 button:hover,
-.btn-nav:hover {
-    background-color: rgba(34, 24, 28, 0.1);
-    backdrop-filter: blur(5px);
+.btn-nav:hover,
+input[type=submit]:focus,
+button:focus,
+.btn-nav:focus {
     cursor: pointer;
     border: 1px #22181c solid;
-    color: #22181c;
-
+    color: wheat;
+    font-weight: 900;
+    backdrop-filter: blur(8px);
+    border: 1px wheat solid;
+    box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
+    animation: animate-button;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .btn-nav {
@@ -453,7 +474,7 @@ button:hover,
         left: 1rem;
         top: 1rem;
         bottom: 0rem;
-        right: 0rem;
+        right: 7rem;
     }
 
     #profile {
@@ -514,5 +535,15 @@ button:hover,
 
     100% {
         opacity: 100%;
+    }
+}
+
+@keyframes animate-button {
+    0% {
+        box-shadow: inset 0rem 0rem rgba(34, 24, 28, 0.8);
+    }
+
+    100% {
+        box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
     }
 }
