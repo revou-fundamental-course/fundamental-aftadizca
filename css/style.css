@@ -109,8 +109,8 @@ h1 span:after,
 h1 span:before {
     content: " ";
     display: block;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #22181c;
+    border-top: 1px solid #22181c;
     height: 8px;
     background-color: #0000;
 }
@@ -160,7 +160,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 0rem;
-    background-color: transparent;
+    background-color: rgba(245, 222, 179, 0.288);
     backdrop-filter: blur(16px);
     border-bottom: 2px solid rgba(34, 24, 28, 1);
 }
@@ -191,22 +191,26 @@ nav>a {
     text-decoration: none;
     color: #22181c;
     font-weight: 100;
+    min-width: 6rem;
 
 
 
 }
 
-nav>a:hover {
+nav>a:hover,
+nav>a:focus {
     background-color: wheat !important;
     cursor: pointer;
     overflow: hidden;
     color: wheat;
     font-weight: bold;
 
-    box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
-    animation: animate-button;
-    animation-duration: 500ms;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    box-shadow: inset 10rem 0px rgb(34, 24, 28, 0.8);
+
+
+    animation: animate-nav;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 /* HOME */
@@ -270,13 +274,12 @@ nav>a:hover {
     margin: 2rem;
     width: 15rem;
     height: 20em;
-    border-radius: 1rem;
-    background-image: linear-gradient(to right bottom, rgba(118, 100, 107, 0.5), rgba(96, 80, 86, 0.5), rgba(74, 60, 65, 0.5), rgba(53, 41, 46, 0.6), rgba(34, 24, 28, 0.8));
-    /* border: 2px solid rgba(34, 24, 28, 0.6); */
+    background-image: linear-gradient(to bottom, rgb(245, 222, 179) 0%, rgba(245, 222, 179, 0.61) 20%, rgba(245, 222, 179, 0.3) 50%, rgba(245, 222, 179, 0.158) 100%);
+    border: 1px solid rgba(34, 24, 28, 1);
     -webkit-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
     -moz-box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
     box-shadow: 14px 21px 67px -6px rgba(0, 0, 0, 0.68);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0px);
 }
 
 .porto-tile h1 {
@@ -284,8 +287,21 @@ nav>a:hover {
     padding: 2rem;
     padding-top: 3rem;
     height: 4rem;
-    background-color: #22181c;
+    color: #22181c;
+    background-image: url("../img/shattered.png");
+    background-color: rgb(245, 222, 179);
+    border-bottom: 1px dotted #22181ca2;
     font-size: 2rem;
+    background-blend-mode: luminosity;
+}
+
+.porto-tile h1:hover {
+    animation-name: porto-tile;
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    box-shadow: inset 15rem 0rem rgba(34, 24, 28, 1);
+    color: wheat;
+
 }
 
 .porto-tile h4 {
@@ -293,6 +309,7 @@ nav>a:hover {
     font-size: 1rem;
     text-wrap: wrap;
     text-align: center;
+    color: #22181c;
 }
 
 /* MESSAGE */
@@ -309,9 +326,9 @@ nav>a:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
-    border: 2px solid #22181c;
-    border-radius: 2rem;
-    margin-top: 0.6rem;
+    border: 1px solid #22181c;
+    margin-top: 0.5rem;
+    background-color: wheat;
 }
 
 .result-wrapper>.row {
@@ -326,15 +343,15 @@ nav>a:hover {
 
 .result-wrapper>.row>.result {
     width: 70%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #22181c;
 }
 
 #msg-error {
     display: none;
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(255, 0, 0, 0.2);
     padding: 2rem;
-    border-radius: 1rem;
     backdrop-filter: blur(1px);
+    border: 1px solid #22181c;
 
 }
 
@@ -355,7 +372,6 @@ textarea {
     text-transform: uppercase;
     font-family: "Dosis", sans-serif;
     font-weight: bold;
-    border-radius: 1rem;
     border: 1px solid #22181c;
     background-color: wheat;
 
@@ -378,6 +394,13 @@ input[type=date] {
     box-sizing: border-box;
 }
 
+input:focus,
+textarea:focus {
+    border-style: inset;
+    outline: rgb(34, 24, 28, .8) solid 1px;
+
+}
+
 textarea {
     width: 100%;
     padding: 12px 20px;
@@ -396,9 +419,7 @@ button,
     text-decoration: none;
     color: #22181c;
     font-weight: 100;
-    border-radius: 1px;
     border: 1px #22181c solid;
-    border-radius: 8rem;
     text-align: center;
     overflow: hidden;
     min-width: 9rem;
@@ -411,15 +432,14 @@ input[type=submit]:focus,
 button:focus,
 .btn-nav:focus {
     cursor: pointer;
-    border: 1px #22181c solid;
     color: wheat;
     font-weight: 900;
     backdrop-filter: blur(8px);
     border: 1px wheat solid;
-    box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
+    box-shadow: inset 12rem 0px rgb(34, 24, 28, .8);
     animation: animate-button;
-    animation-duration: 500ms;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-duration: 300ms;
+    animation-timing-function: ease-in;
 }
 
 .btn-nav {
@@ -458,12 +478,18 @@ button:focus,
         z-index: 1000;
         margin: 0;
         animation-name: animate-message-result;
-        animation-duration: 1000ms;
-        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        animation-duration: 500ms;
+        animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     nav>a {
         padding: 1rem 1rem;
+    }
+
+    nav>a:hover,
+    nav>a:focus {
+        animation-name: animate-nav-vertical;
+        box-shadow: inset 50vw 0rem rgba(34, 24, 28, 0.8);
     }
 
     .home-desc {
@@ -540,10 +566,69 @@ button:focus,
 
 @keyframes animate-button {
     0% {
-        box-shadow: inset 0rem 0rem rgba(34, 24, 28, 0.8);
+        box-shadow: inset 0rem 0px rgb(34, 24, 28, 0);
+
+
     }
 
     100% {
-        box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.8);
+        box-shadow: inset 10rem 0px rgb(34, 24, 28, .8);
+
+
+    }
+}
+
+@keyframes animate-nav {
+    0% {
+        box-shadow: inset 0rem 0px rgb(34, 24, 28, 0);
+
+
+    }
+
+    0% {
+        box-shadow: inset 5rem 0px rgb(34, 24, 28, 0.5);
+
+
+    }
+
+    100% {
+        box-shadow: inset 10rem 0px rgb(34, 24, 28, 0.8);
+
+
+    }
+}
+
+@keyframes animate-nav-vertical {
+    0% {
+        box-shadow: inset 0rem 0px rgb(34, 24, 28, 0);
+
+
+    }
+
+    0% {
+        box-shadow: inset 25vw 0px rgb(34, 24, 28, 0.5);
+
+
+    }
+
+    100% {
+        box-shadow: inset 50vw 0px rgb(34, 24, 28, 0.8);
+
+
+    }
+}
+
+
+@keyframes porto-tile {
+    0% {
+        box-shadow: inset 0rem 0rem rgba(34, 24, 28, 0)
+    }
+
+    0% {
+        box-shadow: inset 10rem 0rem rgba(34, 24, 28, 0.5);
+    }
+
+    100% {
+        box-shadow: inset 15rem 0rem rgba(34, 24, 28, 1);
     }
 }
