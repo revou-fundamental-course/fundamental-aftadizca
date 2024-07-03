@@ -9,6 +9,11 @@
     src: url("../font/LilitaOne.ttf");
 }
 
+@font-face {
+    font-family: "Londrina Shadow";
+    src: url("../font/LondrinaShadow.ttf");
+}
+
 html {
     scroll-behavior: smooth;
 }
