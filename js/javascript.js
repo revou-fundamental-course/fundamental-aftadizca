@@ -92,6 +92,12 @@ window.onload = function () {
 
     //Image slider
 
+    // auto slide
+    let timerSlide = setInterval(() => {
+        slideBgImg(1)
+    }, 10000);
+
+
 
     let bgIndex = 0
     let bgElem = document.getElementsByClassName("home-bg")[0]
@@ -116,6 +122,8 @@ window.onload = function () {
 
 
     function slideBgImg(n) {
+        // stop auto slide
+        clearInterval(timerSlide)
         let bgNext = bgIndex + n
 
         // to left
@@ -143,12 +151,10 @@ window.onload = function () {
 
         bgIndex = bgNext
 
-    }
-
-
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        // reset auto slide
+        timerSlide = setInterval(() => {
+            slideBgImg(1)
+        }, 10000);
     }
 
 }
