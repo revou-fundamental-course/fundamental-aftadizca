@@ -23,7 +23,16 @@
         <div id="btn-nav" class="btn-nav dosis">MENU</div>
     </div>
     <div id="home" class="wrapper col-12">
-        <div class="home-bg"></div>
+        <div class="home-bg">
+            <img class="show" src="img/bg.jpg" alt="slide1">
+            <img src="img/bg2.jpg" alt="slide2">
+            <img src="img/bg3.jpg" alt="slide3">
+        </div>
+        <div class="left-slide">&lt;</div>
+        <div class="right-slide">&gt;</div>
+
+        <div class="slide-indicator-wrapper"></div>
+
         <div class="home-desc">
             <h1 class="lg-text-l">Afta Dizca Wahana <span class="lg-text-m">Fullstack Web and Mobile Developer</span>
             </h1>
@@ -94,11 +103,13 @@
         <div class="wrapper-responsive">
             <div class="form-wrapper">
                 <form action="" id="msg-form">
-                    <div id="msg-error" class="error">test</div>
+                    <div id="msg-error" class="error">😫 <span></span> &nbsp;can't be empty!</div>
                     <div class="row">
+                        <div class="label">Full Name</div>
                         <input type="text" id="fullname" name="fullname" placeholder="Full Name">
                     </div>
                     <div class="row">
+                        <div class="label">Birthday</div>
                         <input type="date" id="ttl" name="ttl" placeholder="Birthday">
                     </div>
                     <div class="row secondary">
@@ -109,6 +120,7 @@
                         <label>Female</label>
                     </div>
                     <div class="row">
+                        <div class="label">Message</div>
                         <textarea id="msg" name="msg" placeholder="Message"></textarea>
                     </div>
                     <div class="row">
